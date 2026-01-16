@@ -17,3 +17,9 @@ Run `python scraper.py`
 The script will open Chrome, navigate to CougsConnect, and prompt you to sign in. After signing in, press Enter to continue scraping.
 
 LinkedIn links will be saved to `profile_links.csv`.
+
+Perfect! The scraper now processes profiles incrementally during the scrolling flow. It scrolls to load more profiles, collects the new ones, processes them immediately (opening tabs, extracting LinkedIn links, closing tabs), and continues scrolling until no more profiles load.
+
+This approach avoids loading all profiles into memory at once and processes them in batches as the infinite scroll reveals them.
+
+Run the script again. It should now handle the infinite scroll more efficiently. Monitor the terminal for progress and check the profile_links.csv for extracted LinkedIn URLs. If issues persist, the debug files will help identify problems with specific profiles.
